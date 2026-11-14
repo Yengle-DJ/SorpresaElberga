@@ -1,0 +1,512 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --crema: #eee3ce;
+    --papel: #f8f0df;
+    --marron: #503b2d;
+    --cafe: #765640;
+    --oscuro: #241c17;
+    --dorado: #b18b52;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--crema);
+    color: var(--marron);
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+}
+
+.grano {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+    opacity: .12;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.inicio {
+    min-height: 100vh;
+    padding: 45px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 50% 30%, #fff5e2, transparent 60%),
+        var(--crema);
+}
+
+.sello {
+    border: 1px solid var(--cafe);
+    padding: 8px 18px;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 25px;
+}
+
+.abuelo-grande {
+    font-size: 105px;
+    animation: balanceo 2s infinite ease-in-out;
+}
+
+@keyframes balanceo {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.pequeno {
+    letter-spacing: 5px;
+    font-size: 11px;
+    font-weight: 900;
+    margin-top: 20px;
+}
+
+.inicio h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(55px, 11vw, 105px);
+    line-height: .95;
+    margin: 20px 0;
+    color: var(--oscuro);
+}
+
+.subtitulo {
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.alerta {
+    max-width: 390px;
+    margin: 28px 0;
+    padding: 17px;
+    background: #dfcfb0;
+    border: 1px dashed var(--cafe);
+    font-size: 14px;
+}
+
+.boton {
+    border: none;
+    background: var(--marron);
+    color: white;
+    padding: 17px 30px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.boton:hover {
+    background: var(--dorado);
+    transform: translateY(-4px);
+}
+
+.nota {
+    font-size: 10px;
+    margin-top: 15px;
+    opacity: .7;
+}
+
+.oculto {
+    display: none;
+}
+
+main {
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 100px 8%;
+}
+
+.portada {
+    min-height: 90vh;
+    text-align: center;
+    background: var(--oscuro);
+    color: var(--crema);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.etiqueta {
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 900;
+}
+
+.abuelo-movimiento {
+    font-size: 100px;
+    margin: 30px;
+    animation: saltito 2s infinite;
+}
+
+@keyframes saltito {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.portada h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(35px, 7vw, 65px);
+}
+
+.portada h2 span {
+    display: block;
+    color: #c4a36f;
+}
+
+.descripcion {
+    max-width: 570px;
+    line-height: 1.8;
+    margin: 25px 0;
+}
+
+.datos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.datos div {
+    display: flex;
+    flex-direction: column;
+}
+
+.datos strong {
+    font-family: 'DM Serif Display', serif;
+    font-size: 45px;
+    color: #d0ac72;
+}
+
+.datos span {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.noticias {
+    background: #e3d3b8;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-seccion > span {
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 900;
+}
+
+.titulo-seccion h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 6vw, 48px);
+    margin: 12px 0;
+}
+
+.periodico {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background: #f8f0df;
+    border: 1px solid var(--cafe);
+    text-align: center;
+}
+
+.periodico h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.periodico p {
+    line-height: 1.8;
+}
+
+.noticia-final {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-top: 25px;
+    font-style: italic;
+}
+
+.bromas {
+    max-width: 750px;
+    margin: 35px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.broma {
+    background: var(--papel);
+    padding: 20px;
+    border-left: 4px solid var(--dorado);
+    transition: .3s;
+}
+
+.broma:hover {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+/* GALERÍA DE ELBER */
+
+.galeria {
+    background: var(--papel);
+}
+
+.fotos {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.foto {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 12px 12px 22px;
+    box-shadow: 0 8px 20px #00000018;
+    transform: rotate(-2deg);
+    transition: .4s;
+}
+
+.foto:hover {
+    transform: rotate(0) scale(1.04);
+}
+
+.foto img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: sepia(.25);
+}
+
+.foto span {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* CARTA */
+
+.carta {
+    background: #d6c3a4;
+    text-align: center;
+}
+
+.sobre {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.carta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 45px;
+    margin: 15px 0 35px;
+}
+
+.papel {
+    max-width: 700px;
+    margin: auto;
+    padding: 45px;
+    background: #fff9eb;
+    text-align: left;
+    box-shadow: 10px 12px 0 #927552;
+    line-height: 1.9;
+}
+
+.papel p {
+    margin-bottom: 20px;
+}
+
+.papel h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+}
+
+.firma {
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* CERTIFICADO */
+
+.certificado {
+    background: #30251e;
+    color: var(--crema);
+    display: flex;
+    justify-content: center;
+}
+
+.diploma {
+    border: 5px double #bda16f;
+    outline: 1px solid #bda16f;
+    outline-offset: 9px;
+    max-width: 750px;
+    width: 100%;
+    padding: 45px 30px;
+    text-align: center;
+    background: #45372a;
+}
+
+.diploma > p:first-child {
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.medalla {
+    font-size: 65px;
+    margin: 20px;
+}
+
+.diploma h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: #e4c58c;
+}
+
+.diploma h3 {
+    margin: 15px 0 30px;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.diploma h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 65px;
+    color: #e4c58c;
+    margin: 15px;
+}
+
+.diploma p {
+    line-height: 1.8;
+    margin: 15px auto;
+    max-width: 500px;
+}
+
+.firma-diploma {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid #bda16f;
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 11px;
+}
+
+.sello-final {
+    display: inline-block;
+    margin-top: 30px;
+    border: 2px solid #d1ad70;
+    padding: 12px 25px;
+    transform: rotate(-5deg);
+    color: #e4c58c;
+}
+
+/* FINAL */
+
+.final {
+    text-align: center;
+    background: var(--crema);
+}
+
+.abuelo-final {
+    font-size: 90px;
+    margin-bottom: 20px;
+}
+
+.final h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(35px, 7vw, 60px);
+}
+
+.final p {
+    max-width: 500px;
+    margin: 20px auto;
+    line-height: 1.8;
+}
+
+.final h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin: 35px 0;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 75px 20px;
+    }
+
+    .papel {
+        padding: 25px;
+    }
+
+    .periodico {
+        padding: 25px;
+    }
+
+    .diploma {
+        padding: 35px 20px;
+    }
+
+    .datos {
+        gap: 20px;
+    }
+
+    .datos strong {
+        font-size: 35px;
+    }
+
+    .foto img {
+        height: 320px;
+    }
+
+}

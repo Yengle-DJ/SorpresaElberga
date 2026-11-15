@@ -1,3 +1,4 @@
+
 /* =========================================
    ABRIR LA SORPRESA
 ========================================= */
@@ -8,7 +9,6 @@ function abrirSorpresa() {
     const contenido = document.getElementById("contenido");
 
     inicio.style.display = "none";
-
     contenido.classList.remove("oculto");
 
     lluviaDeAbuelos();
@@ -55,24 +55,20 @@ function lluviaDeAbuelos() {
         const duracion = 3000 + Math.random() * 3000;
 
         const animacion = abuelo.animate(
-
             [
                 {
                     transform: "translateY(0) rotate(0deg)",
                     opacity: 1
                 },
-
                 {
                     transform: "translateY(110vh) rotate(360deg)",
                     opacity: 0.2
                 }
             ],
-
             {
                 duration: duracion,
                 easing: "linear"
             }
-
         );
 
         animacion.onfinish = () => {
